@@ -376,97 +376,74 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================
-   HERO COLLAGE HEADER
+   HERO TRIPTYCH HEADER
    ============================ */
 
-.hero-collage {
-  position: relative;
-  width: 100%;
-  min-height: 70vh;
+.hero-triptych {
+  background-color: var(--color-white);
+  padding: 3rem 2rem 2rem;
+}
+
+.hero-triptych-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-triptych-title .text-display {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: 0.75rem;
+  color: var(--color-black);
+}
+
+.hero-triptych-title .text-body {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--color-gray-500);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-triptych-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  background-color: var(--color-black);
-  overflow: hidden;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.hero-collage.variant-2 {
-  grid-template-columns: 1fr 1.2fr 1fr;
-}
-
-.hero-collage.variant-3 {
-  grid-template-columns: 1fr 1fr 1.2fr;
-}
-
-.collage-item {
+.hero-triptych-grid .photo-item {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-sm);
-  min-height: 250px;
+  height: 320px;
+  background-color: var(--color-gray-100);
 }
 
-.collage-item.large {
-  grid-row: span 2;
-}
-
-.collage-item img {
+.hero-triptych-grid .photo-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  transition: transform 1.2s ease;
+  object-position: top center;
+  transition: transform 1s ease;
+  display: block;
 }
 
-.collage-item:hover img {
-  transform: scale(1.05);
-}
-
-.hero-collage-overlay {
-  position: absolute;
-  inset: 0.5rem;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.4) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-collage-content {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 4rem 2.5rem;
-  max-width: 900px;
-}
-
-.hero-collage-content .text-display {
-  color: var(--color-white);
-  margin-bottom: 1rem;
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-}
-
-.hero-collage-content .text-body {
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 600px;
-  font-size: 1.1rem;
+.hero-triptych-grid .photo-item:hover img {
+  transform: scale(1.03);
 }
 
 .statement-bar {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .statement-bar .text-headline {
-  font-size: clamp(1.8rem, 4vw, 3.5rem);
-  max-width: 1000px;
+  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+  max-width: 900px;
   margin: 0 auto;
+  line-height: 1.2;
 }
 
 /* ============================
@@ -1455,13 +1432,13 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero-collage {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+  .hero-triptych-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
   }
 
-  .collage-item.large {
-    grid-row: span 1;
+  .hero-triptych-grid .photo-item {
+    height: 280px;
   }
 
   .footer-grid {
@@ -1488,25 +1465,25 @@ h1, h2, h3, h4, h5, h6 {
     height: 44px;
   }
 
-  .hero-collage {
+  .hero-triptych {
+    padding: 2rem 1.25rem 1.5rem;
+  }
+
+  .hero-triptych-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-triptych-grid {
     grid-template-columns: 1fr;
-    min-height: auto;
+    gap: 0.75rem;
   }
 
-  .collage-item {
-    min-height: 200px;
+  .hero-triptych-grid .photo-item {
+    height: 240px;
   }
 
-  .collage-item.large {
-    grid-row: span 1;
-  }
-
-  .hero-collage-content {
-    padding: 2rem 1.5rem;
-  }
-
-  .hero-collage-content .text-display {
-    font-size: clamp(2rem, 9vw, 3rem);
+  .hero-triptych-grid .photo-item:nth-child(3) {
+    display: none;
   }
 
   .cards-grid,
