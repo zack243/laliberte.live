@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initMobileMenu();
   initScrollReveal();
+  initParallax();
   initCurrentYear();
 });
 
-/* Navbar scroll state */
 function initNavbar() {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
@@ -22,7 +22,6 @@ function initNavbar() {
   window.addEventListener('scroll', update, { passive: true });
 }
 
-/* Mobile menu */
 function initMobileMenu() {
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.mobile-menu');
@@ -55,9 +54,9 @@ function initMobileMenu() {
   });
 }
 
-/* Scroll reveal */
 function initScrollReveal() {
-  const reveals = document.querySelectorAll('.reveal');
+  const selectors = '.reveal, .reveal-scale, .reveal-left, .reveal-right';
+  const reveals = document.querySelectorAll(selectors);
   if (!reveals.length) return;
 
   const observer = new IntersectionObserver(
@@ -69,13 +68,36 @@ function initScrollReveal() {
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -50px 0px' }
+    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
   );
 
   reveals.forEach((el) => observer.observe(el));
 }
 
-/* Footer current year */
+function initParallax() {
+  const heroMedia = document.querySelector('.hero-media img');
+  if (!heroMedia) return;
+
+  let ticking = false;
+
+  const updateParallax = () => {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    if (scrollY < windowHeight) {
+      const translateY = scrollY * 0.12;
+      heroMedia.style.transform = `translateY(${translateY}px) scale(1.05)`;
+    }
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
 function initCurrentYear() {
   const yearEl = document.querySelector('.current-year');
   if (yearEl) {
