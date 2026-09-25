@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initParallax();
   initCurrentYear();
+  initVisitTabs();
 });
 
 function initNavbar() {
@@ -103,4 +104,29 @@ function initCurrentYear() {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+}
+
+
+function initVisitTabs() {
+  const tabs = document.querySelectorAll('.join-tab');
+  const panels = document.querySelectorAll('.join-panel');
+  if (!tabs.length || !panels.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+
+      tabs.forEach((item) => {
+        const isActive = item === tab;
+        item.classList.toggle('active', isActive);
+        item.setAttribute('aria-selected', String(isActive));
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.dataset.panel === target;
+        panel.classList.toggle('active', isActive);
+        panel.hidden = !isActive;
+      });
+    });
+  });
 }
