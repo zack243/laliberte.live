@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "Site web La Liberte Live",
+  "type": "module",
   "scripts": {
-    "dev": "live-server --port=3000 --host=0.0.0.0 --no-browser",
-    "start": "live-server --port=3000 --host=0.0.0.0 --no-browser"
-  },
-  "devDependencies": {
-    "live-server": "^1.2.2"
+    "dev": "node scripts/dev-server.mjs",
+    "start": "node scripts/dev-server.mjs"
   },
   "engines": {
     "node": ">=18"
