@@ -2318,3 +2318,47 @@ body {
     height: 64px;
   }
 }
+
+
+/* Home navbar mission subtitle — scoped to the homepage */
+.logo.logo-home{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  height:auto;
+  flex-shrink:0;
+  text-decoration:none;
+}
+.logo-home-visual{
+  display:block;
+  position:relative;
+  height:72px;
+  min-width:145px;
+}
+.logo-home-visual .logo-img{height:72px;max-width:none}
+.logo-home-tagline{
+  display:block;
+  width:100%;
+  margin-top:-4px;
+  font-size:0.58rem;
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:0.095em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.9);
+  white-space:nowrap;
+}
+.hero-video .text-display{max-width:1120px;font-size:clamp(3.2rem,7.8vw,8.25rem);line-height:.99}
+@media(max-width:768px){
+  .logo-home-visual,.logo-home-visual .logo-img{height:60px}
+  .logo-home-visual{min-width:115px}
+  .logo-home-tagline{font-size:.48rem;letter-spacing:.045em;margin-top:-4px}
+  .hero-video .text-display{font-size:clamp(2.8rem,11.2vw,5rem);line-height:1.03}
+}
+@media(max-width:420px){
+  .logo-home-visual,.logo-home-visual .logo-img{height:49px}
+  .logo-home-visual{min-width:98px}
+  .logo-home-tagline{font-size:.43rem}
+  .hero-video .text-display{font-size:clamp(2.4rem,10.6vw,3.6rem)}
+}
