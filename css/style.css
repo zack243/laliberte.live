@@ -2362,3 +2362,35 @@ body {
   .logo-home-tagline{font-size:.43rem}
   .hero-video .text-display{font-size:clamp(2.4rem,10.6vw,3.6rem)}
 }
+
+
+/* La Liberté.live — parcours de disciples et implantation */
+.formation-intro .section-header{max-width:900px;margin-inline:auto}
+.formation-intro .text-body,.planting-about .text-body,.campus-online .text-body{max-width:800px;margin-inline:auto}
+.mission-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.btn-outline-dark{border:1px solid #1b1b1b;color:#171717;background:transparent}
+.btn-outline-light{border:1px solid rgba(255,255,255,.85);color:#fff;background:transparent}
+.btn-outline-dark:hover{background:#171717;color:#fff}
+.btn-outline-light:hover{background:white;color:#101010}
+.church-planting-preview{padding-top:5rem;padding-bottom:5rem}
+.planting-preview-inner{display:flex;align-items:center;justify-content:space-between;gap:3rem}
+.planting-preview-inner>div{max-width:780px}
+.planting-preview-inner .text-body{margin-top:1.5rem;color:#e4e4e4}
+.planting-preview-inner>.btn{flex-shrink:0}
+.planting-hero{padding-top:clamp(5rem,11vw,9rem);padding-bottom:clamp(4rem,8vw,7rem)}
+.planting-hero .section-header{max-width:930px;margin-inline:auto}
+.planting-hero .text-display{font-size:clamp(2.9rem,7vw,6.5rem);line-height:1.02;letter-spacing:-.055em;margin:1.4rem auto}
+.planting-hero .text-body{max-width:730px;margin-inline:auto}
+.planting-paths .cards-grid{align-items:stretch}
+.planting-paths .value-card{height:100%;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}
+.planting-paths .value-card .text-body{flex:1;margin:0}
+.planting-paths .text-link{display:inline-block;margin-top:auto;font-weight:700}
+.planting-number{color:#d34a32;font-weight:800;letter-spacing:.16em;font-size:.85rem}
+.planting-final .section-header{max-width:850px;margin-inline:auto}
+.planting-final .text-body{max-width:740px;margin-inline:auto}
+.contact-form .form-feedback{margin-top:1rem;font-size:.92rem}
+.contact-form .form-feedback.is-error{color:#b01e18}
+.contact-form .form-feedback.is-success{color:#167341}
+.contact-form .submit-button:disabled{opacity:.6;cursor:wait}
+@media(max-width:800px){.planting-preview-inner{flex-direction:column;align-items:flex-start}.planting-preview-inner>.btn{align-self:flex-start}.planting-paths .cards-grid{grid-template-columns:1fr}.mission-actions{gap:.75rem}}
+@media(max-width:480px){.mission-actions{flex-direction:column;align-items:stretch}.mission-actions .btn{width:100%;text-align:center}.planting-preview-inner .text-headline{font-size:clamp(2rem,9vw,3.25rem)}}
