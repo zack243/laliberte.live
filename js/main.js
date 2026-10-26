@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initParallax();
   initCurrentYear();
   initVisitTabs();
+  initContactForm();
 });
 
 function initNavbar() {
@@ -128,5 +129,40 @@ function initVisitTabs() {
         panel.hidden = !isActive;
       });
     });
+  });
+}
+
+function initContactForm() {
+  const form=document.getElementById('contactForm');
+  if(!form) return;
+  const subject=form.querySelector('[name="subject"]');
+  const allowed=new Set(Array.from(subject.options).map(option=>option.value));
+  const preselected=new URLSearchParams(window.location.search).get('subject');
+  if(preselected && allowed.has(preselected)) subject.value=preselected;
+  const feedback=document.getElementById('contactFeedback');
+  const button=form.querySelector('button[type="submit"]');
+  form.addEventListener('submit',async(event)=>{
+    event.preventDefault();
+    if(!form.reportValidity()) return;
+    feedback.hidden=true;
+    button.disabled=true;
+    button.textContent='Envoi en cours…';
+    try {
+      const body=Object.fromEntries(new FormData(form).entries());
+      const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      const result=await response.json().catch(()=>({}));
+      if(!response.ok) throw new Error(result.error||"Le message n'a pas pu être envoyé.");
+      feedback.className='form-feedback is-success';
+      feedback.textContent='Votre message a été envoyé à notre équipe. Merci !';
+      feedback.hidden=false;
+      form.reset();
+    } catch(error) {
+      feedback.className='form-feedback is-error';
+      feedback.textContent=error.message||"Une erreur est survenue. Veuillez réessayer.";
+      feedback.hidden=false;
+    } finally {
+      button.disabled=false;
+      button.textContent='Envoyer';
+    }
   });
 }
