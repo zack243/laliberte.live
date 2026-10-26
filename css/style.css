@@ -2394,3 +2394,20 @@ body {
 .contact-form .submit-button:disabled{opacity:.6;cursor:wait}
 @media(max-width:800px){.planting-preview-inner{flex-direction:column;align-items:flex-start}.planting-preview-inner>.btn{align-self:flex-start}.planting-paths .cards-grid{grid-template-columns:1fr}.mission-actions{gap:.75rem}}
 @media(max-width:480px){.mission-actions{flex-direction:column;align-items:stretch}.mission-actions .btn{width:100%;text-align:center}.planting-preview-inner .text-headline{font-size:clamp(2rem,9vw,3.25rem)}}
+
+
+/* Align mission tagline exactly under the home logo without touching other page headers */
+.logo.logo-home{align-items:center;justify-content:center;width:fit-content;max-width:100%}
+.logo-home-visual{width:205px;min-width:0;display:flex;align-items:center;justify-content:center}
+.logo-home-visual .logo-img{left:50%;transform:translateX(-50%);width:auto;max-width:100%;object-fit:contain}
+.logo-home-tagline{width:205px;max-width:100%;text-align:center;padding:0;margin-top:-3px;letter-spacing:.075em}
+@media(max-width:768px){
+ .logo-home-visual,.logo-home-tagline{width:171px}
+ .logo-home-tagline{font-size:.46rem;letter-spacing:.045em}
+}
+@media(max-width:420px){
+ .logo-home-visual,.logo-home-tagline{width:143px}
+ .logo-home-tagline{font-size:.41rem;letter-spacing:.015em}
+}
+/* Mobile CTA readability */
+@media(max-width:640px){.hero-actions .btn{white-space:normal;line-height:1.35;text-align:center}.join-tabs{flex-wrap:wrap}.join-tab{white-space:normal;line-height:1.35}}
