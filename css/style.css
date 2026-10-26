@@ -2448,3 +2448,13 @@ body {
  .reveal,.reveal-scale,.reveal-left,.reveal-right{transition:none!important;animation:none!important}
  .hero-video-media{animation:none!important}
 }
+
+
+/* About page official MVV download */
+.mission-document{margin-top:2.25rem;padding:1.35rem 1.5rem;border:1px solid rgba(0,0,0,.14);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;max-width:930px;background:rgba(255,255,255,.66)}
+.mission-document-copy{min-width:0}
+.mission-document-copy .section-label{display:block;margin-bottom:.4rem}
+.mission-document-copy p{margin:0;line-height:1.5;font-size:.95rem}
+.mission-document>.btn{flex-shrink:0;white-space:nowrap}
+@media(max-width:900px){.mission-document{flex-wrap:wrap}.mission-document>.btn{white-space:normal}}
+@media(max-width:640px){.mission-document{padding:1.25rem;flex-direction:column;align-items:stretch}.mission-document>.btn{width:100%;text-align:center}.navbar-inner>.logo-home .logo-home-visual{max-width:43vw}.navbar-inner>.logo-home .logo-home-tagline{max-width:43vw}}
