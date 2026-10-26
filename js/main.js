@@ -162,7 +162,7 @@ function initContactForm() {
       feedback.hidden=false;
     } finally {
       button.disabled=false;
-      button.textContent='Envoyer';
+      button.textContent='Envoyer mon message';
     }
   });
 }
