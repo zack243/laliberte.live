@@ -72,7 +72,7 @@
   <section class="section section-soft contact-form-section">
     <div class="container">
       <div class="contact-form-container">
-        <form class="contact-form premium-form reveal" action="#" method="POST">
+        <form class="contact-form premium-form reveal" id="contactForm" action="/api/contact" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Nom complet</label>
@@ -92,6 +92,10 @@
             <select id="subject" name="subject">
               <option value="">Choisir un sujet</option>
               <option value="visite">Première visite</option>
+              <option value="enligne">Rejoindre l’église en ligne</option>
+              <option value="implantation">Être formé et envoyé pour démarrer une église</option>
+              <option value="reseau">Rejoindre le réseau La Liberté.live</option>
+              <option value="conversion">Faire devenir mon assemblée La Liberté.live</option>
               <option value="priere">Demande de prière</option>
               <option value="benevolat">Devenir bénévole</option>
               <option value="kids">La Liberté Kids</option>
@@ -103,8 +107,10 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="6" placeholder="Écrivez votre message ici…" required></textarea>
           </div>
+          <div class="form-group" style="position:absolute;left:-10000px" aria-hidden="true"><label for="contact-website">Site web</label><input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
           <button type="submit" class="btn btn-primary submit-button">Envoyer</button>
-          <p class="form-note">Nous vous répondrons dans les plus brefs délais.</p>
+          <p class="form-feedback" id="contactFeedback" role="status" aria-live="polite" hidden></p>
+          <p class="form-note">Votre message sera transmis à l’équipe pour être orienté vers les responsables concernés. Aucune demande n’est publiée sur le site.</p>
         </form>
       </div>
     </div>
