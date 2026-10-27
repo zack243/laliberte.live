@@ -2458,3 +2458,23 @@ body {
 .mission-document>.btn{flex-shrink:0;white-space:nowrap}
 @media(max-width:900px){.mission-document{flex-wrap:wrap}.mission-document>.btn{white-space:normal}}
 @media(max-width:640px){.mission-document{padding:1.25rem;flex-direction:column;align-items:stretch}.mission-document>.btn{width:100%;text-align:center}.navbar-inner>.logo-home .logo-home-visual{max-width:43vw}.navbar-inner>.logo-home .logo-home-tagline{max-width:43vw}}
+
+
+/* Read-only curated CMS and livestream extension */
+.church-feed-section{background:#fff}
+.church-feed-block{margin-top:3.5rem}
+.church-feed-heading{font-size:clamp(1.35rem,2.6vw,2rem);font-weight:700;margin:0 0 1.5rem}
+.church-feed-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.35rem}
+.church-feed-card{min-width:0;background:#f7f8fa;border:1px solid #e6e9ee;border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;align-items:start;gap:.65rem}
+.church-feed-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#a3403b;font-weight:700}
+.church-feed-title{font-size:1.14rem;line-height:1.35;margin:0}
+.church-feed-summary{font-size:.9rem;line-height:1.6;color:#56616d;margin:0}
+.church-feed-meta{font-size:.82rem;color:#69798b;margin:0}
+.church-feed-link{margin-top:auto;color:#ae3e37;font-weight:700;text-decoration:underline;text-underline-offset:3px;font-size:.85rem}
+.church-live-wrapper{max-width:940px;margin:2rem auto 4rem;text-align:center}
+.church-live-tag{display:inline-block;background:#b53637;color:white;border-radius:30px;padding:.55rem 1rem;font-size:.75rem;font-weight:800;letter-spacing:.1em}
+.church-live-wrapper h2{margin:1rem 0 1.35rem}
+.church-live-player{aspect-ratio:16/9;background:#122a43;border-radius:12px;overflow:hidden;margin-bottom:1.2rem}
+.church-live-player iframe{display:block;width:100%;height:100%;border:0}
+@media(max-width:900px){.church-feed-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:610px){.church-feed-grid{grid-template-columns:1fr}.church-feed-card{padding:1.15rem}.church-live-wrapper{margin-bottom:2.5rem}}
