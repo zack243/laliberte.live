@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "publishedAt": null,
+  "sermons": [],
+  "podcasts": [],
+  "events": [],
+  "campuses": [],
+  "live": {
+    "title": "Culte en direct",
+    "schedule": "",
+    "youtubeVideoId": null,
+    "isLive": false
+  }
+}
