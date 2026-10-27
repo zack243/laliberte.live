@@ -374,6 +374,25 @@
       </div>
     </div>
   </section>
+
+  <!-- Dynamic publishing slot: hidden until approved content is in the public feed. -->
+  <section id="church-dynamic-content" class="section church-feed-section" hidden>
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Continuer à grandir</span>
+        <h2 class="text-headline">Vivre l’église, là où tu es.</h2>
+        <p class="text-body">Des enseignements, des rendez-vous et des moments à vivre ensemble.</p>
+      </div>
+      <div id="church-live-wrapper" class="church-live-wrapper" hidden>
+        <span class="church-live-tag">● EN DIRECT</span>
+        <h2 class="text-headline" id="church-live-title">Culte en direct</h2>
+        <div class="church-live-player" id="church-live-player"></div>
+        <a class="btn btn-red" href="https://priere-live.vercel.app/" target="_blank" rel="noopener">Confier un sujet de prière</a>
+      </div>
+      <div id="church-content-lists"></div>
+    </div>
+  </section>
+
   <section class="section section-dark church-planting-preview">
     <div class="container planting-preview-inner reveal">
       <div>
@@ -438,5 +457,6 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script src="js/church-content.js" defer></script>
 </body>
 </html>
